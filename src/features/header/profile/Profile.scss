@@ -1,0 +1,25 @@
+@import '../../../sass/variables';
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .profile-icon {
+    width: $icon-size-md;
+    height: $icon-size-md;
+    color: $text-gray-500;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .profile-name {
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    color: $header-text-color;
+    margin-left: 0.5rem;
+  }
+}

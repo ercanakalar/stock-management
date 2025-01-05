@@ -1,0 +1,29 @@
+@mixin scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-hidden-unscrollable;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin scrollbar-thumb {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $border-gray-200;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-color;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: darken($scrollbar-thumb-color, 10%);
+  }
+}

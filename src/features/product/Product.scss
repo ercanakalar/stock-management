@@ -1,0 +1,68 @@
+@import '../../sass/variables';
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $gap-4;
+  justify-items: center;
+  width: 100%;
+  padding-top: $padding-6;
+  margin-bottom: $margin-6;
+
+  @media (min-width: $breakpoint-xxxs) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-2;
+  }
+
+  @media (min-width: $breakpoint-xxs) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-2;
+  }
+  @media (min-width: $breakpoint-xs) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-2;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap-2;
+  }
+  @media (min-width: $breakpoint-xll) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap-2;
+  }
+
+  .no-products {
+    text-align: center;
+    grid-column: span 3;
+    @media (max-width: $breakpoint-md) {
+      grid-column: span 2;
+    }
+  }
+}
+
+.loader-container {
+  grid-column: span 3;
+  width: 50%;
+  padding-top: $padding-6;
+
+  .loader-center {
+    text-align: center;
+    grid-column: span-full;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: span 2;
+  }
+}
+
+.error-container {
+  grid-column: span 3;
+  width: 50%;
+  padding-top: $padding-6;
+  text-align: center;
+
+  @media (max-width: $breakpoint-md) {
+    grid-column: span 2;
+  }
+}

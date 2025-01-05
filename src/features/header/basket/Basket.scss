@@ -1,0 +1,37 @@
+@import '../../../sass/variables';
+
+.basket-container {
+  .basket-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-2;
+    cursor: $cursor-pointer;
+
+    .basket-icon {
+      width: $icon-size-md;
+      height: $icon-size-md;
+      color: $text-gray-500;
+    }
+
+    .basket-price {
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+      color: $header-text-color;
+      z-index: $z-50;
+    }
+  }
+
+  .basket-dropdown {
+    display: none;
+    position: absolute;
+    top: $position-top;
+    right: 4px;
+    width: $width-max;
+    z-index: $z-100;
+
+    @media (max-width: $breakpoint-xlg) {
+      display: flex;
+    }
+  }
+}

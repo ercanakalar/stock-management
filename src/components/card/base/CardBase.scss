@@ -1,0 +1,47 @@
+@import '../../../sass/variables';
+
+.card-base {
+  position: relative;
+  height: inherit;
+
+  .card-title {
+    display: flex;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-normal;
+    color: $text-card-title;
+    width: fit-content;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    background-color: $bg-white;
+    box-shadow: $shadow-md;
+    padding: $card-padding;
+    margin-bottom: $margin-bottom;
+    width: auto;
+
+    /* Responsive widths */
+    @media (min-width: $breakpoint-lg) {
+      width: 14rem;
+    }
+    @media (min-width: $breakpoint-xl) {
+      width: 14rem;
+    }
+    @media (min-width: $breakpoint-2xl) {
+      width: 14rem;
+    }
+
+    &.justify-between {
+      justify-content: space-between;
+    }
+
+    &.justify-center {
+      justify-content: center;
+    }
+  }
+}

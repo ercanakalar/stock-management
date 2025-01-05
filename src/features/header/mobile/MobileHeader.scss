@@ -1,0 +1,186 @@
+@import '../../../sass/variables';
+
+.header-options {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  z-index: 1000;
+
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+  }
+
+  .nav-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .ant-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.header-filter {
+  position: fixed;
+  inset: 0;
+  z-index: $z-50;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+
+  .header-filter-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-4;
+    border-bottom: $border-b;
+
+    .header-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+    }
+
+    .close-button {
+      font-size: $font-size-xl;
+      color: $text-gray-500;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .header-filter-body {
+    display: flex;
+    flex-direction: column;
+    padding: $padding-4;
+    gap: $gap-4;
+
+    .apply-button {
+      background-color: $bg-blue-500;
+      color: $text-white;
+      padding: $button-padding-y;
+      border-radius: $rounded;
+      margin-top: $margin-top-4;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($bg-blue-500, 10%);
+      }
+    }
+  }
+}
+
+.header-basket {
+  position: fixed;
+  inset: 0;
+  z-index: $fixed-z-index;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+
+  .header-basket-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-4;
+    border-bottom: $border-b;
+
+    .header-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+    }
+
+    .close-button {
+      font-size: $font-size-xl;
+      color: $text-gray-500;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .header-basket-body {
+    display: flex;
+    flex-direction: column;
+    padding: $padding-4;
+    gap: $gap-4;
+  }
+}
+
+.header-sort {
+  position: fixed;
+  inset: 0;
+  z-index: $fixed-z-index;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+
+  .header-sort-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-4;
+    border-bottom: $border-b;
+
+    .header-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+    }
+
+    .close-button {
+      font-size: $font-size-xl;
+      color: $text-gray-500;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .header-sort-body {
+    display: flex;
+    flex-direction: column;
+    padding: $padding-4;
+    gap: $gap-4;
+
+    .apply-button {
+      background-color: $bg-blue-500;
+      color: $text-white;
+      padding: $button-padding-y;
+      border-radius: $rounded;
+      margin-top: $margin-top-4;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($bg-blue-500, 10%);
+      }
+    }
+  }
+}

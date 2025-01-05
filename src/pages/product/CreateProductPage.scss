@@ -1,0 +1,15 @@
+@import "../../sass/variables";
+
+.create-product-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  .create-product-page{
+    width: 50%;
+    padding: 1rem;  
+    box-shadow: $card-shadow;
+  }
+}

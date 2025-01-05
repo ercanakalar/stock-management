@@ -1,0 +1,12 @@
+@import '../../sass/variables';
+
+.header-title {
+  text-align: center;
+  color: $header-text-color;
+  cursor: pointer;
+
+  @media (min-width: 860px) {
+    font-weight: $font-weight-extrabold;
+    font-size: $font-size-2xl;
+  }
+}

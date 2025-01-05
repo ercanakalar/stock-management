@@ -1,0 +1,46 @@
+@import '../../sass/variables';
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .checkout-row {
+    position: relative;
+    display: flex;
+    gap: $gap-1;
+    width: 100%;
+    align-items: center;
+
+    .total-price-label {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+      text-align: center;
+    }
+
+    .total-price-value {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+      text-align: center;
+      color: $text-card-price;
+    }
+  }
+
+  .checkout-button-container {
+    margin-top: $margin-top-4;
+
+    .checkout-button {
+      width: 100%;
+      background-color: $bg-button;
+      color: $text-white;
+      border-radius: $rounded-md;
+      padding: $padding-2;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($bg-button, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.basket-card {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-4;
+  width: 100%;
+  height: -webkit-fill-available;
+
+  .basket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-white;
+    padding: $padding-2;
+    border-radius: $rounded-md;
+    box-shadow: $shadow-md;
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
+
+      .item-name {
+        font-size: $font-size-xs;
+        font-weight: $font-weight-normal;
+        color: $text-gray-800;
+      }
+
+      .item-price {
+        font-size: $font-size-xss;
+        color: $text-blue-500;
+      }
+    }
+
+    .item-controls {
+      display: flex;
+      align-items: center;
+      gap: $gap-1;
+
+      .control-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $button-size;
+        height: $button-size;
+        background-color: $bg-count-button;
+        border: none;
+        border-radius: $rounded-md;
+        cursor: pointer;
+
+        .button-text {
+          font-size: $font-size-base;
+          font-weight: $font-weight-bold;
+          color: $text-count-button;
+        }
+
+        &:hover {
+          background-color: darken($bg-count-button, 10%);
+        }
+      }
+
+      .item-quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $button-size;
+        height: $button-size;
+        background-color: $bg-count-text;
+        color: $text-button;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+        border-radius: $rounded-md;
+      }
+    }
+  }
+
+  .empty-cart-message {
+    text-align: center;
+    color: $text-gray-500;
+    font-size: $font-size-sm;
+  }
+}
+
+.card-content-basket {
+  height: 75%;
+  overflow: auto;
+  padding-bottom: 40px;
+  @include scrollbar-thumb;
+}

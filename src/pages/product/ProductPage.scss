@@ -1,0 +1,66 @@
+@import '../../sass/variables';
+
+.product-page {
+  display: flex;
+  height: 100%;
+  gap: 12px;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $padding-1;
+  }
+
+  .sidebar {
+    display: none;
+    height: 75%;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      flex-direction: $flex-column;
+      padding-top: $padding-top-6;
+      width: $width-quarter;
+    }
+
+    &.filters {
+      @media (min-width: $breakpoint-lg) {
+        align-items: $flex-end;
+      }
+
+      @media (min-width: $breakpoint-2xl) {
+        align-items: $flex-baseline;
+      }
+
+      .sort-by,
+      .filter {
+        @media (min-width: $breakpoint-lg) {
+          margin-left: 0;
+        }
+
+        @media (min-width: $breakpoint-2xl) {
+          margin-left: auto;
+        }
+      }
+    }
+
+    &.cart {
+      display: flex;
+
+      @media (max-width: $breakpoint-lg) {
+        display: none;
+      }
+      @media (max-width: $breakpoint-xlg) {
+        display: none;
+      }
+      @media (min-width: $breakpoint-2xl) {
+        display: flex;
+      }
+    }
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: $flex-column;
+    justify-content: space-between;
+    height: 97%;
+  }
+}

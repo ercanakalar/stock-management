@@ -1,0 +1,64 @@
+@import '../../sass/variables';
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 99vh;
+
+  @media (min-width: $breakpoint-xxxs) and (max-width: $breakpoint-md) {
+    height: 130vh;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $bg-header-color;
+    height: $header-height;
+    padding: 0 $padding-4;
+    position: relative;
+  }
+
+  .header-title-and-search {
+    display: flex;
+    align-items: center;
+    gap: $gap-4;
+  }
+
+  .header-basket-profile {
+    display: flex;
+    align-items: center;
+    gap: $gap-4;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+    @media (min-width: $breakpoint-xlg) {
+      display: flex;
+    }
+    @media (min-width: $breakpoint-2xl) {
+      display: flex;
+    }
+  }
+
+  .header-main-content {
+    flex-grow: 1;
+    height: calc(100vh - 5rem);
+    padding: $padding-4;
+    @media (min-width: $breakpoint-xxxs) {
+      padding: 0;
+    }
+  }
+
+  .mobile-header-options {
+    display: none;
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+    }
+    @media (min-width: $breakpoint-xlg) {
+      display: none;
+    }
+    @media (min-width: $breakpoint-2xl) {
+      display: none;
+    }
+  }
+}

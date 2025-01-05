@@ -1,0 +1,141 @@
+// Colors
+$bg-header-color: #2a59fe;
+$header-text-color: #ffffff;
+$text-gray-500: #6b7280;
+$text-black: #000000;
+$text-blue-500: #3b82f6;
+$text-red-600: #dc2626;
+$divider-color: #e5e7eb;
+$border-gray-200: #e5e7eb;
+$border-gray-300: #d1d5db;
+$bg-white: #ffffff;
+$bg-gray-100: #f3f4f6;
+$bg-blue-500: #3b82f6;
+$bg-count-button: #f3f4f6;
+$bg-count-text: #2a59fe;
+$text-card-title: #333333b2;
+$button-color: #2a59fe;
+$count-text: #ffffff;
+$button-text: #ffffff;
+$card-price: #2a59fe;
+$bg-filter-search: #fafafa;
+$text-count-button: rgba(0, 0, 0, 0.35);
+$text-white: #ffffff;
+$text-card-price: #2a59fe;
+$bg-button: #2a59fe;
+$header-color: #2a59fe;
+$text-button: #ffffff;
+$text-gray-800: #4b5563;
+
+// Font Sizes
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-xss: 0.625rem;
+$font-size-xm: 0.8125rem;
+$xm: 0.8125rem;
+
+// Font Weights
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Dimensions
+$header-height: 3rem;
+$button-padding-y: 1rem;
+$button-size: 1.5rem;
+$icon-size: 1rem;
+$icon-size-md: 1.5rem;
+$height-10: 2.5rem;
+$height-24: 6rem;
+$radio-size: 1rem;
+$padding-1: 0.25rem;
+$padding-2: 0.5rem;
+$padding-4: 1rem;
+$padding-6: 1.5rem;
+$margin-bottom: 1rem;
+$margin-top-4: 1rem;
+$margin-6: 1.5rem;
+$padding-top-2: 0.5rem;
+$padding-top-6: 1.5rem;
+$icon-size-small: 1rem;
+$icon-size-medium: 1.25rem;
+$z-50: 50;
+$z-100: 100;
+$padding-vertical: 0.5rem;
+$padding-horizontal: 0.625rem;
+$checkbox-size: 1rem;
+$card-padding: 0.625rem;
+
+// Borders and Radius
+$rounded: 0.375rem;
+$input-border-radius: 0.25rem;
+$border-b: 1px solid $border-gray-200;
+$border-t: 1px solid $border-gray-200;
+$rounded-md: 0.375rem;
+
+// Shadows
+$card-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Widths
+$search-width-sm: 17rem;
+$search-width-lg: 22.5rem;
+$search-width-xl: 24rem;
+$width-full: 100%;
+$width-quarter: 25%;
+$width-zero: 0;
+
+// Heights
+$height-screen: 100vh;
+
+// Breakpoints
+$breakpoint-xxxs: 320px;
+$breakpoint-xxs: 375px;
+$breakpoint-xs: 425px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 767px;
+$breakpoint-lmd: 860px;
+$breakpoint-lg: 1024px;
+$breakpoint-xlg: 1160px;
+$breakpoint-xl: 1280px;
+$breakpoint-xll: 1350px;
+$breakpoint-2xl: 1536px;
+$lmd: 860px;
+
+// Layout and Positioning
+$flex-column: column;
+$flex-center: center;
+$flex-baseline: baseline;
+$flex-end: flex-end;
+$fixed-bottom: 0;
+$fixed-left: 0;
+$fixed-z-index: 50;
+$top-offset-negative: -0.5rem;
+$left-offset: 0.5rem;
+$width-max: max-content;
+
+// Scrollbar
+$scrollbar-width-thin: thin;
+$scrollbar-thumb-color: #c4c4c4;
+
+// Button States
+$button-hover-bg: darken($bg-gray-100, 5%);
+
+// Cursor
+$cursor-pointer: pointer;
+
+// Spacing
+$gap-1: 0.25rem;
+$gap-2: 0.5rem;
+$gap-4: 1rem;
+$gap-8: 2rem;
+$gap-20: 5rem;
+$gap-2: 0.5rem;
+$position-top: 2rem;
+$position-left-negative: -1rem;

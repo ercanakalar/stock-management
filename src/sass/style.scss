@@ -1,0 +1,49 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  background-color: $header-color;
+  color: $header-text-color;
+}
+
+.card {
+  box-shadow: $card-shadow;
+  font-size: $xm;
+}
+
+.button {
+  background-color: $button-color;
+  color: $button-text;
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+}
+
+.scrollable-container {
+  @include scrollbar-none;
+
+  &.custom-scrollbar {
+    @include scrollbar-thumb;
+  }
+}
+
+@media (min-width: $lmd) {
+  .responsive {
+    padding: 20px;
+  }
+}

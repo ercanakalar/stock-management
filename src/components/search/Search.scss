@@ -1,0 +1,51 @@
+@import '../../sass/variables';
+
+.search-container {
+  position: relative;
+  height: 100%;
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+  @media (min-width: $breakpoint-lg) {
+    display: block;
+  }
+  @media (min-width: $breakpoint-lmd) {
+    display: block;
+  }
+  @media (min-width: $breakpoint-xl) {
+    display: block;
+  }
+  @media (min-width: $breakpoint-2xl) {
+    display: block;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    color: $text-gray-500;
+    top: 25%;
+
+    svg {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+
+  .search-input {
+    width: 100%;
+    padding: $padding-vertical $padding-horizontal;
+    padding-left: calc($icon-size + 0.75rem);
+    border: none;
+    border-radius: $input-border-radius;
+    outline: none;
+
+    &:focus {
+      border-color: $text-gray-500;
+    }
+  }
+}

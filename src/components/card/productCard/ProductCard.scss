@@ -1,0 +1,75 @@
+@import '../../../sass/variables';
+
+.product-card {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-xxxs) {
+    max-width: 140px;
+  }
+  @media (min-width: $breakpoint-xxs) {
+    max-width: 160px;
+  }
+  @media (min-width: $breakpoint-xxs) {
+    max-width: 170px;
+  }
+  @media (min-width: $breakpoint-md) {
+    max-width: 170px;
+  }
+  @media (min-width: $breakpoint-lmd) {
+    max-width: 190px;
+  }
+
+  img {
+    object-fit: cover;
+    max-height: 150px;
+  }
+
+  .ant-card-meta-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .ant-card-meta-description {
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .add-to-cart {
+    margin-top: 10px;
+    background-color: #2a59fe;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.875rem;
+
+    &:hover {
+      background-color: #1e45c6;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .quantity-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    color: #555;
+  
+    strong {
+      color: #000;
+    }
+    span {
+      font-size: small;
+    }
+  }
+}
