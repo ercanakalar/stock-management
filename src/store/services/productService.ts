@@ -1,6 +1,5 @@
 import createApi from '../middlewares/createApi';
 import { baseQuery } from '../bases/baseQuery';
-import { sortOptionsValue } from '../../constants/sortConstant';
 import { Product } from '../../type/product-type';
 
 export const productService = createApi({
@@ -8,28 +7,10 @@ export const productService = createApi({
   baseQuery,
   tagTypes: ['Product'],
   endpoints: (builder) => ({
-    getProducts: builder.query<
-      Product[],
-      {
-        sort?: string;
-        brands?: string[];
-        models?: string[];
-      }
-    >({
-      query: ({ sort = '', brands = [], models = [] }) => {
-        let queryString = '?';
-
-        if (sort && sortOptionsValue[sort as keyof typeof sortOptionsValue]) {
-          queryString += `&${
-            sortOptionsValue[sort as keyof typeof sortOptionsValue]
-          }`;
-        }
-
-        if (brands.length > 0) queryString += `&brand=${brands.join(',')}`;
-        if (models.length > 0) queryString += `&model=${models.join(',')}`;
-
+    getProducts: builder.query<Product[], void>({
+      query: () => {
         return {
-          url: queryString,
+          url: '/',
           method: 'GET',
         };
       },
@@ -43,28 +24,6 @@ export const productService = createApi({
             error?.response?.statusText ||
             'An error occurred while fetching products.',
         };
-      },
-    }),
-    getFilterProducts: builder.query<Product[], {}>({
-      query: () => {
-        return {
-          url: '/',
-          method: 'GET',
-        };
-      },
-      transformResponse: (response: Product[]) => {
-        const brands = new Set<string>();
-        const models = new Set<string>();
-
-        response.forEach((product) => {
-          if (product.brand) brands.add(product.brand);
-          if (product.model) models.add(product.model);
-        });
-
-        return response;
-      },
-      transformErrorResponse: (response) => {
-        return response;
       },
     }),
     getProductById: builder.query<Product, string>({
@@ -131,7 +90,6 @@ export const productService = createApi({
 
 export const {
   useGetProductsQuery,
-  useGetFilterProductsQuery,
   useGetProductByIdQuery,
   useDeleteProductByIdMutation,
   useCreateProductMutation,

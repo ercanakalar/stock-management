@@ -5,7 +5,10 @@ import { Button, Pagination } from 'antd';
 
 import { useAppDispatch, useAppSelector } from '../../store/hook';
 import { useGetProductsQuery } from '../../store/services/productService';
-import { setPaginationPage, setProducts } from '../../store/slices/productSlice';
+import {
+  setPaginationPage,
+  setProducts,
+} from '../../store/slices/productSlice';
 
 import Loader from '../../components/loader/Loader';
 
@@ -25,10 +28,12 @@ export const Product: React.FC = () => {
 
   const { isMobile } = useResponsive();
 
-  const { data: calledProducts, isLoading, error, refetch } = useGetProductsQuery({
-    sort,
-  });
-
+  const {
+    data: calledProducts,
+    isLoading,
+    error,
+    refetch,
+  } = useGetProductsQuery();
 
   useEffect(() => {
     if (!calledProducts) return;
@@ -51,16 +56,19 @@ export const Product: React.FC = () => {
         a.name.replace(' ', '').localeCompare(b.name.replace(' ', ''))
       );
     } else if (sort === 'Price high to low') {
-      filteredAndSortedProducts.sort((a, b) => Number(b.price) - Number(a.price));
+      filteredAndSortedProducts.sort(
+        (a, b) => Number(b.price) - Number(a.price)
+      );
     } else if (sort === 'Price low to high') {
-      filteredAndSortedProducts.sort((a, b) => Number(a.price) - Number(b.price));
+      filteredAndSortedProducts.sort(
+        (a, b) => Number(a.price) - Number(b.price)
+      );
     }
 
-    refetch()
+    refetch();
 
     dispatch(setProducts(filteredAndSortedProducts));
   }, [available, sort, dispatch, calledProducts, refetch]);
-
 
   const itemsPerPage = 6;
 
@@ -85,13 +93,16 @@ export const Product: React.FC = () => {
     }
   }, [searchTerm, dispatch]);
 
-  const getErrorMessage = (error: FetchBaseQueryError | SerializedError): string => {
+  const getErrorMessage = (
+    error: FetchBaseQueryError | SerializedError
+  ): string => {
     if ('status' in error) {
       const err = error as FetchBaseQueryError;
-      return `Error ${err.status}: ${err.data && typeof err.data === 'object' && 'message' in err.data
-        ? (err.data as any).message
-        : 'An error occurred while fetching products.'
-        }`;
+      return `Error ${err.status}: ${
+        err.data && typeof err.data === 'object' && 'message' in err.data
+          ? (err.data as any).message
+          : 'An error occurred while fetching products.'
+      }`;
     } else if ('message' in error) {
       return error.message || 'An unknown error occurred.';
     }
@@ -100,42 +111,45 @@ export const Product: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="loader-container">
+      <div className='loader-container'>
         <Loader />
       </div>
     );
   }
 
   if (error) {
-    return <div className="error-container">{getErrorMessage(error)}</div>;
+    return <div className='error-container'>{getErrorMessage(error)}</div>;
   }
 
   return (
     <>
-      <div className="product-container">
+      <div className='product-container'>
         {currentProducts?.length ? (
           currentProducts.map((product) => (
             <Suspense key={product.id} fallback={<Loader />}>
-              <ProductCard product={product} className="product-card" />
+              <ProductCard product={product} className='product-card' />
             </Suspense>
           ))
         ) : (
-          <div className="no-products">No products found</div>
+          <div className='no-products'>No products found</div>
         )}
       </div>
-      {(totalPages > 1 && !isMobile) && (
+      {totalPages > 1 && !isMobile && (
         <Pagination
           align='center'
           current={paginationPage}
           total={filteredProducts?.length || 0}
           pageSize={itemsPerPage}
           onChange={handlePageChange}
-          className="pagination-container"
+          className='pagination-container'
           showSizeChanger={false}
         />
       )}
       {isMobile && currentProducts && currentProducts.length < totalPages && (
-        <Button className="load-more-button" onClick={() => handlePageChange(paginationPage + 1)}>
+        <Button
+          className='load-more-button'
+          onClick={() => handlePageChange(paginationPage + 1)}
+        >
           Load More
         </Button>
       )}

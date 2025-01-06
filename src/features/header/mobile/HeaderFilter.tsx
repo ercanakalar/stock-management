@@ -1,22 +1,20 @@
 import { Drawer, Button, Space } from 'antd';
-import { Filter } from '../../../components/filter/Filter';
 
 import './MobileHeader.scss';
+import { AvailableFilter } from '../../../components/available-filter/AvailableFilter';
 
 const HeaderFilter = (props: {
-  selectedBrands: Set<string>;
-  selectedModels: Set<string>;
-  brands: Set<string>;
-  models: Set<string>;
-  handleBrandChange: (brand: string) => void;
-  handleModelChange: (model: string) => void;
+  selectedAvailable: string;
+  available: string[];
+  handleAvailabilityChange: (model: string) => void;
   toggleFilter: (isOpen: boolean) => void;
 }) => {
   return (
     <Drawer
-      title="Filter"
-      placement="bottom"
-      onClose={() => props.toggleFilter(false)} open={true}
+      title='Filter'
+      placement='bottom'
+      onClose={() => props.toggleFilter(false)}
+      open={true}
       bodyStyle={{
         padding: 16,
         display: 'flex',
@@ -24,29 +22,22 @@ const HeaderFilter = (props: {
         justifyContent: 'space-between',
         height: '100%',
       }}
-      height="100%"
+      height='100%'
       style={{
         height: '100vh',
         maxHeight: '100vh',
       }}
     >
-      <Space direction="vertical" style={{ flex: 1, overflow: 'auto' }}>
-        <Filter
-          className="brand-filter"
-          title="Brands"
-          selectedFilter={props.selectedBrands}
-          filter={props.brands}
-          onChange={props.handleBrandChange}
-        />
-        <Filter
-          className="model-filter"
-          title="Models"
-          selectedFilter={props.selectedModels}
-          filter={props.models}
-          onChange={props.handleModelChange}
+      <Space direction='vertical' style={{ flex: 1, overflow: 'auto' }}>
+        <AvailableFilter
+          className='filter'
+          title='Available'
+          selectedFilter={props.selectedAvailable}
+          filter={['Yes', 'No']}
+          onChange={props.handleAvailabilityChange}
         />
       </Space>
-      <Button type="primary" onClick={() => props.toggleFilter(false)} block>
+      <Button type='primary' onClick={() => props.toggleFilter(false)} block>
         Apply
       </Button>
     </Drawer>

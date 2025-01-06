@@ -6,7 +6,6 @@ import { Product } from '../../features/product/Product';
 import { SortBy } from '../../components/sort/SortBy';
 
 import { ProductState } from '../../type/product-type';
-import { useGetFilterProductsQuery } from '../../store/services/productService';
 import { BasketCard } from '../../components/card/basketCard/BasketCard';
 import Checkout from '../../components/checkout/Checkout';
 
@@ -21,8 +20,6 @@ const ProductPage = () => {
 
   const [localSort, setLocalSort] = useState(currentSort);
   const { isMobile } = useResponsive();
-
-  useGetFilterProductsQuery({});
 
   const handleAvailabilityChange = (available: string) => {
     dispatch(setAvailableProducts(available));
